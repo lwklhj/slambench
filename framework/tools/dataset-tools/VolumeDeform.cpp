@@ -18,6 +18,7 @@
 #include <Eigen/Eigen>
 
 #include <iostream>
+#include <fstream>
 
 using namespace slambench::io;
 

@@ -17,7 +17,7 @@ set(ColourReset "${ESC}[m")
 ### NOTE: dependencies vary according to dataset
 #------------------------------------------------
 # Boost is required - abort if not found
-find_package(Boost 1.54 REQUIRED COMPONENTS system filesystem program_options regex)
+find_package(Boost 1.84 REQUIRED COMPONENTS system filesystem program_options regex)
 
 # EUROCMAV datasets support requirements - skip if not found
 find_package(LIBYAML QUIET)

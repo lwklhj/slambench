@@ -5,7 +5,7 @@ set(common_libraries "")
 include_directories(./include)
 
 ########## Boost (required) ####################
-find_package(Boost 1.54 REQUIRED COMPONENTS program_options regex)
+find_package(Boost 1.84 REQUIRED COMPONENTS system filesystem program_options regex)
 
 ########## GLUT GUI Library ####################
 find_package(GLUT)
@@ -115,15 +115,16 @@ add_library(slambench-io
 )
 
 add_library(slambench-utils
-	src/SLAMBenchConfiguration
-	src/sb_malloc
-	src/ParameterComponent
-    src/ParameterManager
-    src/ResultWriter
+	src/SLAMBenchConfiguration.cpp
+	src/sb_malloc.cpp
+	src/ParameterComponent.cpp
+    src/ParameterManager.cpp
+    src/ResultWriter.cpp
 )
 
 target_include_directories(slambench-io PRIVATE ${Boost_INCLUDE_DIRS})
 target_include_directories(slambench-metrics PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(slambench-utils PRIVATE -lboost_filesystem -lboost_system)
 target_link_libraries(slambench-io PRIVATE slambench-utils pthread  ${Boost_LIBRARIES})
 
 SET(EXTRA_LIBS_FOR_MEMORY "")
@@ -189,7 +190,7 @@ if(realsense2_FOUND)
 			src/io/realsense/RealSense2FrameStream.cpp
 			src/io/realsense/RealSense2InputInterface.cpp)
 	add_definitions(-DDO_REALSENSE=1)
-	set_target_properties(slambench-io-oni2  PROPERTIES COMPILE_FLAGS "-fPIC -Wno-unused-variable -Wno-error=return-type  -Wno-error=strict-aliasing")
+	set_target_properties(slambench-io-realsense  PROPERTIES COMPILE_FLAGS "-fPIC -Wno-unused-variable -Wno-error=return-type  -Wno-error=strict-aliasing")
 	target_link_libraries(slambench-io-realsense ${realsense2_LIBRARY})
 	target_link_libraries(slambench-utils slambench-io-realsense)
 else()

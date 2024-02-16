@@ -378,13 +378,41 @@ orbslam3:
 	@echo  "================================================================================================================="
 	@echo  "ORB-SLAM3 [Campos et al, ARXIV'20]"
 	@echo  "Original repository: https://github.com/UZ-SLAMLab/ORB_SLAM3"
-	@echo  "Used repository: https://github.com/mihaibujanca/ORB_SLAM3"
+	@echo  "Used repository: https://github.com/lwklhj/ORB_SLAM3"
 	@echo  "================================================================================================================="
 
 	@echo "Are you sure you want to download this use-case (y/n) ?" && ${GET_REPLY} && echo REPLY=$$REPLY && if [ ! "$$REPLY" == "y" ] ; then echo -e "\nExit."; false; else echo -e "\nDownload starts."; fi
 	mkdir -p benchmarks/orbslam3/src/original
 	rm benchmarks/orbslam3/src/original -rf
 	git clone --recursive --branch master https://github.com/mihaibujanca/ORB_SLAM3 benchmarks/orbslam3/src/original
+	@echo "cmake_minimum_required(VERSION 2.8)"   > benchmarks/$@/CMakeLists.txt
+	@echo "explore_implementations ( $@ src/* )"     >> benchmarks/$@/CMakeLists.txt
+
+orbslam3_sp_trt:
+	@echo  "================================================================================================================="
+	@echo  "ORB-SLAM3 [Campos et al, ARXIV'20]"
+	@echo  "Original repository: https://github.com/UZ-SLAMLab/ORB_SLAM3"
+	@echo  "Used repository: https://github.com/lwklhj/ORB_SLAM3"
+	@echo  "================================================================================================================="
+
+	@echo "Are you sure you want to download this use-case (y/n) ?" && ${GET_REPLY} && echo REPLY=$$REPLY && if [ ! "$$REPLY" == "y" ] ; then echo -e "\nExit."; false; else echo -e "\nDownload starts."; fi
+	mkdir -p benchmarks/orbslam3_sp_trt/src/original
+	rm benchmarks/orbslam3_sp_trt/src/original -rf
+	git clone --recursive --branch sp-trt https://github.com/lwklhj/ORB_SLAM3 benchmarks/orbslam3_sp_trt/src/original
+	@echo "cmake_minimum_required(VERSION 2.8)"   > benchmarks/$@/CMakeLists.txt
+	@echo "explore_implementations ( $@ src/* )"     >> benchmarks/$@/CMakeLists.txt
+
+orbslam3_sp_torch:
+	@echo  "================================================================================================================="
+	@echo  "ORB-SLAM3 [Campos et al, ARXIV'20]"
+	@echo  "Original repository: https://github.com/UZ-SLAMLab/ORB_SLAM3"
+	@echo  "Used repository: https://github.com/lwklhj/ORB_SLAM3"
+	@echo  "================================================================================================================="
+
+	@echo "Are you sure you want to download this use-case (y/n) ?" && ${GET_REPLY} && echo REPLY=$$REPLY && if [ ! "$$REPLY" == "y" ] ; then echo -e "\nExit."; false; else echo -e "\nDownload starts."; fi
+	mkdir -p benchmarks/orbslam3_sp_torch/src/original
+	rm benchmarks/orbslam3_sp_torch/src/original -rf
+	git clone --recursive --branch sp-torch https://github.com/lwklhj/ORB_SLAM3 benchmarks/orbslam3_sp_torch/src/original
 	@echo "cmake_minimum_required(VERSION 2.8)"   > benchmarks/$@/CMakeLists.txt
 	@echo "explore_implementations ( $@ src/* )"     >> benchmarks/$@/CMakeLists.txt
 

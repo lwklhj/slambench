@@ -16,5 +16,7 @@ flame;FLAME [Greene et al. ICCV'17];https://github.com/robustrobotics/flame;mast
 supereight;Supereight [Vespa et al. RA-L'18];https://github.com/emanuelev/supereight;master;https://github.com/pamela-project/supereight;benchmarks/supereight/src/original
 refusion;ReFusion [Palazollo et al. IROS'19];https://github.com/PRBonn/refusion;master;https://github.com/mihaibujanca/refusion;benchmarks/refusion/src/original
 open_vins;OpenVINS [Geneva et al. IROS'19];https://github.com/rpng/open_vins;rpng-master;https://github.com/mihaibujanca/open_vins;benchmarks/open_vins/src/original
-orbslam3;ORB-SLAM3 [Campos et al, ARXIV'20];https://github.com/UZ-SLAMLab/ORB_SLAM3;master;https://github.com/mihaibujanca/ORB_SLAM3;benchmarks/orbslam3/src/original
+orbslam3;ORB-SLAM3 [Campos et al, ARXIV'20];https://github.com/UZ-SLAMLab/ORB_SLAM3;master;https://github.com/lwklhj/ORB_SLAM3;benchmarks/orbslam3/src/original
 fullfusion;FullFusion [Bujanca et al. ICCVW'19];https://github.com/mihaibujanca/fullfusion-jetson;master;https://github.com/mihaibujanca/fullfusion-jetson;benchmarks/fullfusion/src/original
+orbslam3_sp_trt;ORB-SLAM3-SP-TRT [Campos et al, ARXIV'20];https://github.com/UZ-SLAMLab/ORB_SLAM3;sp-trt;https://github.com/lwklhj/ORB_SLAM3;benchmarks/orbslam3_sp_trt/src/original
+orbslam3_sp_torch;ORB-SLAM3-SP-TORCH [Campos et al, ARXIV'20];https://github.com/UZ-SLAMLab/ORB_SLAM3;sp-torch;https://github.com/lwklhj/ORB_SLAM3;benchmarks/orbslam3_sp_torch/src/original
