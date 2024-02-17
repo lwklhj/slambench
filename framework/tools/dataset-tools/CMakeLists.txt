@@ -129,6 +129,10 @@ add_library(ETHI ETHI.cpp)
 target_link_libraries(ETHI slambench-io TUM ICLNUIM)
 target_include_directories(ETHI PRIVATE ${Boost_INCLUDE_DIRS})
 
+add_library(ETH3D ETH3D.cpp)
+target_link_libraries(ETH3D slambench-io ${Boost_LIBRARIES})
+target_include_directories(ETH3D PRIVATE ${Boost_INCLUDE_DIRS})
+
 add_library(VolumeDeform VolumeDeform.cpp)
 target_link_libraries(VolumeDeform slambench-io)
 target_include_directories(VolumeDeform PRIVATE ${Boost_INCLUDE_DIRS})
@@ -153,4 +157,4 @@ IF (OpenCV_FOUND AND ROSPKGS_FOUND)
 endif ()
 
 add_executable(dataset-generator dataset-generator.cpp)
-target_link_libraries(dataset-generator TUM UZHFPV ICLNUIM ICL ETHI BONN VolumeDeform ${OpenLORIS_LIB} ${UZHFPV_LIB} ${EUROCMAV_LIB} SVO ${TUM-ROSBAG_LIB})
+target_link_libraries(dataset-generator TUM UZHFPV ICLNUIM ICL ETHI ETH3D BONN VolumeDeform ${OpenLORIS_LIB} ${UZHFPV_LIB} ${EUROCMAV_LIB} SVO ${TUM-ROSBAG_LIB})
