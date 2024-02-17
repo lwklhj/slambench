@@ -420,15 +420,15 @@ SLAMFile* ETH3DReader::GenerateSLAMFile () {
 
     /// Default parameters from freiburg1
 
-    CameraSensor::intrinsics_t intrinsics_rgb;
-    DepthSensor::intrinsics_t intrinsics_depth;
+    // CameraSensor::intrinsics_t intrinsics_rgb;
+    // DepthSensor::intrinsics_t intrinsics_depth;
 
-    CameraSensor::distortion_type_t distortion_type;
-    CameraSensor::distortion_coefficients_t distortion_rgb;
-    DepthSensor::distortion_coefficients_t distortion_depth;
+    // CameraSensor::distortion_type_t distortion_type;
+    // CameraSensor::distortion_coefficients_t distortion_rgb;
+    // DepthSensor::distortion_coefficients_t distortion_depth;
 
-    DepthSensor::disparity_params_t disparity_params;
-    DepthSensor::disparity_type_t disparity_type;
+    // DepthSensor::disparity_params_t disparity_params;
+    // DepthSensor::disparity_type_t disparity_type;
 
     std::cout << "using ETH3D Illumination camera calibration parameters" << std::endl;
 
