@@ -189,7 +189,6 @@ bool loadTUMGreyData(const std::string &dirname,
                      const CameraSensor::intrinsics_t &intrinsics,
                      const CameraSensor::distortion_coefficients_t &distortion,
                      const CameraSensor::distortion_type_t &distortion_type) {
-    auto image_params = ETH3DReader::get_image_params();
     auto grey_sensor = GreySensorBuilder()
             .rate(image_params.rate)
             .size(image_params.width, image_params.height)
