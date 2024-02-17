@@ -272,7 +272,7 @@ bool ETH3DReader::loadTUMGroundTruthData(const std::string &dirname , SLAMFile &
 
     const std::string& ts = RegexPattern::timestamp;
     const std::string& ws = RegexPattern::whitespace;
-    const std::string& dec = "(-?[\\d.]+(?:e-?\\d+)?)";
+    const std::string& dec = "([+\\-]?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+\\-]?\\d+)?)";
     const std::string& start = RegexPattern::start;
     const std::string& end = RegexPattern::end;
 
