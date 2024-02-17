@@ -29,7 +29,7 @@
 
 using namespace slambench::io;
 
-bool loadTUMDepthData(const std::string &dirname,
+bool ETH3DReader::loadTUMDepthData(const std::string &dirname,
                       SLAMFile &file,
                       const Sensor::pose_t &pose,
                       const DepthSensor::intrinsics_t &intrinsics,
@@ -108,7 +108,7 @@ bool loadTUMDepthData(const std::string &dirname,
 }
 
 
-bool loadTUMRGBData(const std::string &dirname,
+bool ETH3DReader::loadTUMRGBData(const std::string &dirname,
                     SLAMFile &file,
                     const Sensor::pose_t &pose,
                     const CameraSensor::intrinsics_t &intrinsics,
@@ -183,7 +183,7 @@ bool loadTUMRGBData(const std::string &dirname,
     return true;
 }
 
-bool loadTUMGreyData(const std::string &dirname,
+bool ETH3DReader::loadTUMGreyData(const std::string &dirname,
                      SLAMFile &file,
                      const Sensor::pose_t &pose,
                      const CameraSensor::intrinsics_t &intrinsics,
@@ -257,7 +257,7 @@ bool loadTUMGreyData(const std::string &dirname,
 }
 
 
-bool loadTUMGroundTruthData(const std::string &dirname , SLAMFile &file) {
+bool ETH3DReader::loadTUMGroundTruthData(const std::string &dirname , SLAMFile &file) {
 
     auto gt_sensor = GTSensorBuilder()
             .index(file.Sensors.size())
@@ -331,7 +331,7 @@ bool loadTUMGroundTruthData(const std::string &dirname , SLAMFile &file) {
     return true;
 }
 
-bool loadTUMAccelerometerData(const std::string &dirname, SLAMFile &file) {
+bool ETH3DReader::loadTUMAccelerometerData(const std::string &dirname, SLAMFile &file) {
 
     auto accelerometer_sensor = AccSensorBuilder()
             .index(file.Sensors.size())
