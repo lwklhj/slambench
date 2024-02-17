@@ -50,7 +50,7 @@ namespace slambench {
             std::string input;
             bool grey = true, rgb = true, depth = true, gt = true, accelerometer = true;
 
-            explicit ETH3DReader(std::string name) : DatasetReader(std::move(name)) {
+            explicit ETH3DReader(const std::string& name) : DatasetReader(name) {
                 this->addParameter(TypedParameter<std::string>("i",
                         "input-directory", "path of the TUM dataset directory",
                         &this->input, nullptr));
