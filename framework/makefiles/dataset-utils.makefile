@@ -225,7 +225,7 @@ datasets/SVO/artificial.slam: ./datasets/SVO/artificial.dir
 	mkdir -p $@
 	unzip -q ${@D}/$(subst eth3d_,,$*)_rgbd.zip -d $@
 	unzip -q ${@D}/$(subst eth3d_,,$*)_mono.zip -d $@
-	touch ${@D}/accelerometer.txt
+	find $@ -mindepth 1 -maxdepth 1 -type d -exec touch {}/accelerometer.txt \;
 
 ./datasets/ETH3D/%.slam : ./datasets/ETH3D/%.dir
 	if [ ! -e ./build/bin/dataset-generator ] ; then make slambench ; fi
