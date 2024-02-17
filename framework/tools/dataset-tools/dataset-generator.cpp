@@ -25,6 +25,7 @@
 #include <ETHI.h>
 
 #include "include/BONN.h"
+#include "include/ETH3D.h"
 #include "include/EUROCMAV.h"
 #include "include/ICL.h"
 #include "include/ICLNUIM.h"
@@ -102,6 +103,8 @@ public:
             config->reader = new OpenLORISReader("");
         } else if (dataset_name == "VolumeDeform") {
             config->reader = new VolumeDeformReader("");
+        } else if (dataset_name == "eth3d") {
+            config->reader = new ETH3DReader("");
         } else if (dataset_name == "ethi") {
             auto eth_reader = new ETHIReader("");
             if(eth_reader->dataset == "iclnuim")

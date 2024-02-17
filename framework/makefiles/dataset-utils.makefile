@@ -212,6 +212,25 @@ datasets/SVO/artificial.slam: ./datasets/SVO/artificial.dir
 	cp $(@D)/$*/camchain-imucam-..$*_imu.yaml datasets/UZHFPV/$*.yaml
 	cp $(@D)/$*/imu.yaml datasets/UZHFPV/imu_$*.yaml
 
+#### ETH3D ####
+./datasets/ETH3D/%_rgbd.zip :
+	mkdir -p $(@D)
+	cd $(@D) && ${WGET} "https://www.eth3d.net/data/slam/datasets/$(subst eth3d_,,$*)_rgbd.zip"
+
+./datasets/ETH3D/%_mono.zip :
+	mkdir -p $(@D)
+	cd $(@D) && ${WGET} "https://www.eth3d.net/data/slam/datasets/$(subst eth3d_,,$*)_mono.zip"
+
+./datasets/ETH3D/%.dir : ./datasets/ETH3D/%_rgbd.zip ./datasets/ETH3D/%_mono.zip
+	mkdir -p $@
+	unzip -q ${@D}/$(subst eth3d_,,$*)_rgbd.zip -d $@
+	unzip -q ${@D}/$(subst eth3d_,,$*)_mono.zip -d $@
+	touch ${@D}/accelerometer.txt
+
+./datasets/ETH3D/%.slam : ./datasets/ETH3D/%.dir
+	if [ ! -e ./build/bin/dataset-generator ] ; then make slambench ; fi
+	./build/bin/dataset-generator -d eth3d -i $</* -o $@ -grey true -rgb true -gt true -depth true -acc false -accelerometer false
+
 #### ETH Illumination ####
 ./datasets/ETHI/%.zip:
 	echo download $*.zip
