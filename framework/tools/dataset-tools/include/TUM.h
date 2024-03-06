@@ -259,7 +259,7 @@ namespace slambench {
                     return DatasetOrigin::Freiburg3;
                 }
 
-                if (input.find("ethi") != std::string::npos) {
+                if (input.find("ethl") != std::string::npos) {
                     for (uint32_t i = 0; i < 4; i++) {
                         rgb_intrinsics[i] = ethi_intrinsics_rgb[i];
                         depth_intrinsics[i] = ethi_intrinsics_depth[i];
