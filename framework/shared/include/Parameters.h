@@ -21,6 +21,7 @@
 #include <iomanip>
 #include <vector>
 #include <typeinfo>
+#include <limits>
 
 #include "ParameterComponent.h"
 
